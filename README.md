@@ -17,9 +17,7 @@ mvn test -Prun
 > * **GET returnning json data:** [http://localhost/home2](http://localhost/home2)
 > * **GET with parsing path parameter:** [http://localhost/evcs/type/typeA](http://localhost/evcs/type/typeA)
 > * **GET with parsing varials types of path parameters:** [http://localhost/evcs/type/typeA/state/1/cancelled/false](http://localhost/evcs/type/typeA/state/1/cancelled/false)
-> * **POST json data and return json data:** 
-
-*Use some HTTP client tools (e.g. browser plugin) to POST this*:
+> * **POST json data and return json data:** *(Use some HTTP client tools (e.g. browser plugin) to POST this)*:
 ```
 URL: http://localhost/home3 
 Content-Type: application/json 
