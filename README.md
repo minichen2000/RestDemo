@@ -6,6 +6,7 @@
 * GET with path parameters
 * GET with returnning json data (using jackson object mapping)
 * POST with parsing input json data and returnning json data.
+
 ##Run it!
 [Maven](http://maven.apache.org/) is used to build and run this demo.
 1. mvn test -Prun
