@@ -14,4 +14,4 @@
 > * [http://localhost/home1](http://localhost/home1)
 > * [http://localhost/home2](http://localhost/home2)
 > * [http://localhost/evcs/type/typeA](http://localhost/evcs/type/typeA)
-> * [http://localhost/evcs/type/typeA/state/1/cancelled/false](http://localhost/evcs/type/typeA/state/activated/cancelled/false)
+> * [http://localhost/evcs/type/typeA/state/1/cancelled/false](http://localhost/evcs/type/typeA/state/1/cancelled/false)
