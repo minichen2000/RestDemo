@@ -4,17 +4,17 @@
 ##Features
 * GET
 * GET with path parameters
-* GET with returnning json data (using jackson object mapping)
-* POST with parsing input json data and returnning json data.
+* GET with returning json data (using jackson object mapping)
+* POST with parsing input json data and returning json data.
 
 ##Run it!
-[Maven](http://maven.apache.org/) is used to build and run this demo. Following comand to run server:
+[Maven](http://maven.apache.org/) is used to build and run this demo. Following command to run server *(at default port 80)*:
 ```
 mvn test -Prun
 ```
 ##Test it!
 > * **Simple GET:** [http://localhost/home1](http://localhost/home1)
-> * **GET returnning json data:** [http://localhost/home2](http://localhost/home2)
+> * **GET returning json data:** [http://localhost/home2](http://localhost/home2)
 > * **GET with parsing path parameter:** [http://localhost/evcs/type/typeA](http://localhost/evcs/type/typeA)
 > * **GET with parsing varials types of path parameters:** [http://localhost/evcs/type/typeA/state/1/cancelled/false](http://localhost/evcs/type/typeA/state/1/cancelled/false)
 > * **POST json data and return json data:** *(Use some HTTP client tools (e.g. browser plugin) to POST this)*:
