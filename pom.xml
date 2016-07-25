@@ -98,6 +98,12 @@
             <version>${jerseyVersion}</version>
         </dependency>
 
+        <!--<dependency>
+            <groupId>com.nokia.nsb.snms</groupId>
+            <artifactId>restful-api-lib-ctrl-adp-server</artifactId>
+            <version>1.1.0</version>
+        </dependency>-->
+
     </dependencies>
 
     <profiles>

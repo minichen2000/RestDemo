@@ -17,6 +17,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         ResourceConfig config = new ResourceConfig()
                 .packages("com.rest.test")
+                //.packages("com.nokia.restful.ctrl_adp.server.api")
                 //.register(MyObjectMapperProvider.class)  // No need to register this provider if no special configuration is required.
                 .register(JacksonFeature.class)
                 .register(CORSResponseFilter.class);
