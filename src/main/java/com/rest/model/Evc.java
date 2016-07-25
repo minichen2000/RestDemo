@@ -6,6 +6,7 @@ import java.util.List;
  * Created by junyuel on 7/19/2016.
  */
 public class Evc {
+
     private String name;
     private String type;
     private int id;
