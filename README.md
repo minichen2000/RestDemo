@@ -39,5 +39,4 @@ mvn generate-sources
 ```
 mvn test -Prun
 ```
-```
 
