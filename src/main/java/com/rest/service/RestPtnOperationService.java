@@ -15,3 +15,4 @@ public interface RestPtnOperationService {
     public List<PTP> getAllPTPs(NE ne);
     public Tunnel createTunnel(TunnelCreation data);
 }
+

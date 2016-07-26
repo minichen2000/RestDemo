@@ -1,0 +1,8 @@
+{
+  "groupId":"com.nokia.nsb.snms",
+  "artifactId":"restful-api-lib-ui-ctrl-server",
+  "artifactVersion":"1.1.0",
+  "library":"jersey2",
+  "apiPackage": "com.nokia.restful.ui_ctrl.server.api",
+  "modelPackage": "com.nokia.restful.ui_ctrl.server.model"
+}

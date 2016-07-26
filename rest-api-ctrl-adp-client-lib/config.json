@@ -1,0 +1,8 @@
+{
+  "groupId":"com.nokia.nsb.snms",
+  "artifactId":"restful-api-lib-ctrl-adp-client",
+  "artifactVersion":"1.1.0",
+  "library":"jersey2",
+  "apiPackage": "com.nokia.restful.ctrl_adp.client.api",
+  "modelPackage": "com.nokia.restful.ctrl_adp.client.model"
+}
