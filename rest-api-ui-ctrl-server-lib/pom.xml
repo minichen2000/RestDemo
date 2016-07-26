@@ -27,6 +27,7 @@
             <artifactId>swagger-codegen-cli</artifactId>
             <version>${swagger-codegen-cli-version}</version>
         </dependency>
+
     </dependencies>
     <build>
         <plugins>

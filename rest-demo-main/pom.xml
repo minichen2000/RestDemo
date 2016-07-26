@@ -132,14 +132,7 @@
             <artifactId>migbase64</artifactId>
             <version>2.2</version>
         </dependency>
-        <dependency>
-            <groupId>com.nokia.nsb.snms</groupId>
-            <artifactId>restful-api-lib-ui-ctrl-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.nokia.nsb.snms</groupId>
-            <artifactId>restful-api-lib-ctrl-adp-client</artifactId>
-        </dependency>
+
 
 
     </dependencies>
