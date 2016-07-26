@@ -32,11 +32,13 @@ Request body:
 ```
 ***
 ***
-*(To use swagger generated Client/Server libraries):
+(To use swagger generated Client/Server libraries):
+```
 cd rest-api-ctrl-adp-client-lib
 mvn generate-sources
 cd rest-api-ui-ctrl-server-lib
 mvn generate-sources
 cd ..
 mvn package
-*
+```
+
