@@ -30,15 +30,13 @@ Request body:
   "zEnds":[]
 }
 ```
-***
-***
-#To use swagger generated Client/Server libraries:
+
+#To use swagger generated Client/Server sources:
 ```
-mvn package
+mvn generate-sources
 ```
 #Run:
 ```
-cd rest-demo-main
 mvn test -Prun
 ```
 ```
