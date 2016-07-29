@@ -2,7 +2,10 @@ package com.rest.test;
 
 import com.rest.service.RestPtnOperationServiceFactory;
 import com.rest.service.impl.RestPtnOperationServiceImpl;
+import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.handler.HandlerList;
+import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.glassfish.jersey.jackson.JacksonFeature;
@@ -17,6 +20,34 @@ import java.io.IOException;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Server docServer = new Server(8080);
+
+
+                ResourceHandler files = new ResourceHandler();
+                files.setServer(docServer);
+                files.setResourceBase(".");
+                files.setDirectoriesListed(false);
+
+                HandlerList handlers = new HandlerList();
+                handlers.setHandlers(new Handler[] {files});
+
+                docServer.setHandler(handlers);
+                try {
+                    docServer.start();
+                    docServer.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    docServer.destroy();
+                }
+            }
+        }).start();
 
         //RestPtnOperationServiceFactory.setService(new RestPtnOperationServiceImpl());
 

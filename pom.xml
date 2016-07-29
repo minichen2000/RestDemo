@@ -185,6 +185,46 @@
                     <target>${jdkCompileVersion}</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>clean-gen-main</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <configuration>
+                            <filesets>
+                                <fileset>
+                                    <directory>gen/restful-api-lib-ui-ctrl-server/src/main</directory>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>clean-all</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <configuration>
+                            <filesets>
+                                <fileset>
+                                    <directory>gen</directory>
+                                </fileset>
+                                <fileset>
+                                    <directory>target</directory>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -202,7 +242,7 @@
                                     <groupId>io.swagger</groupId>
                                     <artifactId>swagger-codegen-cli</artifactId>
                                     <version>${swagger-codegen-cli-version}</version>
-                                    <outputDirectory>${basedir}</outputDirectory>
+                                    <outputDirectory>target</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                             <!-- other configurations here -->
@@ -226,7 +266,7 @@
                             <workingDirectory>${basedir}</workingDirectory>
                             <arguments>
                                 <argument>-jar</argument>
-                                <argument>./swagger-codegen-cli-${swagger-codegen-cli-version}.jar</argument>
+                                <argument>target/swagger-codegen-cli-${swagger-codegen-cli-version}.jar</argument>
                                 <argument>generate</argument>
                                 <argument>-i</argument>
                                 <argument>./swagger_adp.json</argument>
@@ -250,7 +290,7 @@
                             <workingDirectory>${basedir}</workingDirectory>
                             <arguments>
                                 <argument>-jar</argument>
-                                <argument>./swagger-codegen-cli-${swagger-codegen-cli-version}.jar</argument>
+                                <argument>target/swagger-codegen-cli-${swagger-codegen-cli-version}.jar</argument>
                                 <argument>generate</argument>
                                 <argument>-i</argument>
                                 <argument>./swagger_ctrl.json</argument>
