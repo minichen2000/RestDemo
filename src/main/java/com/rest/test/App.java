@@ -30,7 +30,7 @@ public class App {
                 ResourceHandler files = new ResourceHandler();
                 files.setServer(docServer);
                 files.setResourceBase(".");
-                files.setDirectoriesListed(false);
+                files.setDirectoriesListed(true);
 
                 HandlerList handlers = new HandlerList();
                 handlers.setHandlers(new Handler[] {files});
@@ -49,18 +49,18 @@ public class App {
             }
         }).start();
 
-        //RestPtnOperationServiceFactory.setService(new RestPtnOperationServiceImpl());
+        RestPtnOperationServiceFactory.setService(new RestPtnOperationServiceImpl());
 
         ResourceConfig config = new ResourceConfig()
-                //.packages("com.rest.test")
-                .packages("com.nokia.restful.ui_ctrl.server.api")
+                .packages("com.rest.test")
+                //.packages("com.nokia.restful.ui_ctrl.server.api")
                 //.register(MyObjectMapperProvider.class)  // No need to register this provider if no special configuration is required.
                 .register(JacksonFeature.class)
                 .register(CORSResponseFilter.class);
         ServletHolder servlet = new ServletHolder(new ServletContainer(config));
 
 
-        Server server = new Server(80);
+        Server server = new Server(9090);
         ServletContextHandler context = new ServletContextHandler(server, "/*");
         context.addServlet(servlet, "/*");
 
