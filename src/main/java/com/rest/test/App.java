@@ -2,6 +2,7 @@ package com.rest.test;
 
 import com.rest.service.RestPtnOperationServiceFactory;
 import com.rest.service.impl.RestPtnOperationServiceImpl;
+import org.eclipse.jetty.http.MimeTypes;
 import org.eclipse.jetty.server.*;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
@@ -12,6 +13,7 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 
+import javax.activation.MimeType;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
@@ -80,8 +82,16 @@ public class App {
                 .register(JacksonFeature.class)
                 .register(CORSResponseFilter.class);
         ServletHolder servlet = new ServletHolder(new ServletContainer(config));
+
         ServletContextHandler context = new ServletContextHandler(server, "/*");
         context.addServlet(servlet, "/*");
+
+        /* Add servlet for making jnlp file*/
+        MimeTypes mt=new MimeTypes();
+        mt.addMimeMapping("jnlp", "application/x-java-jnlp-file");
+        context.setMimeTypes(mt);
+        context.addServlet(MakeJnlp.class, "/startusm");
+        /* End of jnlp*/
 
 
         try {
